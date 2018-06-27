@@ -19,8 +19,8 @@ var resolvers = {
         allUsers: function () { return users; }
     },
     Mutation: {
-        createUser: function (parent, args, context, info) {
-            var newUser = Object.assign({ id: users.length + 1, args: args });
+        createUser: function (parent, args) {
+            var newUser = Object.assign({ id: users.length + 1 }, args);
             users.push(newUser);
             return newUser;
         }

@@ -34,8 +34,8 @@ const resolvers = {
 		allUsers: () => users
 	},
 	Mutation: {
-		createUser: (parent, args, context, info) => {
-			const newUser = Object.assign({id: users.length + 1, args});
+		createUser: (parent, args) => {
+			const newUser = Object.assign({id: users.length + 1}, args);
 			users.push(newUser);
 			return newUser;
 		}
